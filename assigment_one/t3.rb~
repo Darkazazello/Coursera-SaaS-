@@ -1,0 +1,9 @@
+def combine_anagrams(words)
+  hash = Hash.new
+  words.each do |word|
+    temp = word.downcase.chars.to_a.sort.to_s
+    hash.has_key?(temp) ? hash[temp] = hash[temp] + [word] :
+      hash[temp] = word
+  end
+  hash.values
+end
